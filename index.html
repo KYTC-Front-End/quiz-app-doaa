@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+  src="https://kit.fontawesome.com/623677c6b3.js"
+  crossorigin="anonymous"
+></script>
+  <title>Quiz App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section class="hero-container">
+        <form class="home">
+            <p id="quizTitle">Welcome to the Quiz App! Answer 10 multiple-choice questions to test your knowledge. </p>
+        
+            <input type="text" placeholder="Enter your name*" id="userName" />
+            <p id="error"></p>
+            <input type="submit"  id="startButton" value="Start Game" />
+        </form>
+
+        <section id="questionContainer" style="display: none;">
+          <section id="header-question">
+            <div id="questionNum"></div>
+            <div id="scoreContainer"></div>
+          </section>
+
+          <hr>
+          <section id="questionBox">
+            <h3 id="question"></h3>
+            <div id="choices"></div>
+          </section>
+          
+
+          <section class="question-btn">
+            <button id="nextButton">Next</button> 
+            <button id="submitButton" style="display: none;">Submit</button>
+          </section>
+         
+        </section>
+
+        <section id="resultContainer" style="display: none;">
+          <h3>The Quiz is over</h3>
+          <p id="result"></p>
+          <div class="result-btn">
+            <button id="leaderboard-Btn">Leader board</button>   
+          </div>
+        </section>
+
+        <section id="leader-pop" style="display: none;">
+          <section id="leaderboardBox">
+                  <h3>Leader Board</h3>
+                  <hr>
+                  <div id="closeIcon"><i class="fas fa-times"></i></div>
+                  <div id="resultStorge"></div>
+                </section>
+        </section>
+    </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
