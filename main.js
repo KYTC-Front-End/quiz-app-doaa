@@ -53,7 +53,6 @@ let questionsQuiz = [
     const randomIndex = questionsQuiz[Math.floor(Math.random() * questionsQuiz.length)];
     if (!randomQuestion.includes(randomIndex)) {
       randomQuestion.push(randomIndex);
-      console.log(randomQuestion);
     }
   }
 
@@ -169,18 +168,22 @@ let questionsQuiz = [
   
   
   //Leaderboard
+  let buttonClicked = false ;
   leaderboardBtn.addEventListener('click',(event)=>{
   event.preventDefault();
   leaderPop.style.display = "flex";
   const resultStorge = document.getElementById("resultStorge");
   let leaderBoard = JSON.parse(localStorage.getItem('leaderboard'));
   if (leaderBoard && leaderBoard.length > 0) {
-    leaderBoard.sort((a, b) => b.score - a.score);
+    if (!buttonClicked) {
+          leaderBoard.sort((a, b) => b.score - a.score);
     leaderBoard.forEach(player => {
       let listItem = document.createElement('li');
       listItem.textContent = `${player.user}: ${player.score}`;
       resultStorge.appendChild(listItem);
+      buttonClicked = true;
     });
+    }
   }
   });
   
